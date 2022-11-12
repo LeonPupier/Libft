@@ -1,0 +1,31 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lpupier <lpupier@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/11/08 17:29:34 by lpupier           #+#    #+#             */
+/*   Updated: 2022/11/09 08:51:41 by lpupier          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
+
+char	*ft_strchr(const char *s, int c)
+{
+	char	letter;
+	size_t	idx;
+	size_t	len_s;
+
+	letter = (char)c;
+	idx = 0;
+	len_s = ft_strlen(s) + 1;
+	while (idx <= len_s)
+	{
+		if (s[idx] == letter)
+			return ((char *)&s[idx]);
+		idx++;
+	}
+	return (NULL);
+}
