@@ -6,7 +6,7 @@
 /*   By: lpupier <lpupier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 09:06:17 by lpupier           #+#    #+#             */
-/*   Updated: 2022/11/11 14:33:06 by lpupier          ###   ########.fr       */
+/*   Updated: 2022/11/13 16:17:45 by lpupier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	idx = 0;
 	new_s1 = (unsigned char *)s1;
 	new_s2 = (unsigned char *)s2;
-	while (s1 && s2)
+	while (new_s1 && new_s2)
 	{
 		if (new_s1[idx] == new_s2[idx] && idx < n)
 			idx++;

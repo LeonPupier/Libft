@@ -6,7 +6,7 @@
 /*   By: lpupier <lpupier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 18:21:41 by lpupier           #+#    #+#             */
-/*   Updated: 2022/11/09 09:04:07 by lpupier          ###   ########.fr       */
+/*   Updated: 2022/11/13 14:22:54 by lpupier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
-	char			letter;
+	unsigned char	letter;
 	size_t			idx;
 	unsigned char	*new_s;
 
@@ -24,7 +24,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	while (idx < n)
 	{
 		if (new_s[idx] == letter)
-			return ((char *)&s[idx]);
+			return ((unsigned char *)&s[idx]);
 		idx++;
 	}
 	return (NULL);

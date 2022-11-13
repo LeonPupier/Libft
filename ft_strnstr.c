@@ -6,7 +6,7 @@
 /*   By: lpupier <lpupier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 10:20:44 by lpupier           #+#    #+#             */
-/*   Updated: 2022/11/11 15:51:34 by lpupier          ###   ########.fr       */
+/*   Updated: 2022/11/13 16:25:01 by lpupier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	size_t	idx_n;
 
 	idx = 0;
-	if (!needle)
-		return ((char *)haystack);
-	if (needle[0] == haystack[0] && haystack[0] == '\0')
+	if (!needle || !haystack)
 		return ((char *)haystack);
 	while (haystack[idx] && idx < len)
 	{

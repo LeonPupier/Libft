@@ -1,3 +1,5 @@
 libftTester/
+libft-war-machine/
 .vscode/
 a.out
+*.o
