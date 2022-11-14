@@ -6,7 +6,7 @@
 /*   By: lpupier <lpupier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 15:11:54 by lpupier           #+#    #+#             */
-/*   Updated: 2022/11/13 14:47:12 by lpupier          ###   ########.fr       */
+/*   Updated: 2022/11/14 08:20:00 by lpupier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 
 	new_dst = (unsigned char *)dst;
 	new_src = (unsigned char *)src;
-	if (src >= dst)
+	if (src >= dst && dst && src)
 	{
 		idx = 0;
 		while (idx < len)
@@ -29,7 +29,7 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 			idx++;
 		}
 	}
-	else
+	else if (dst && src)
 	{
 		idx = len;
 		while (idx > 0)
@@ -38,5 +38,5 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 			idx--;
 		}
 	}
-	return (new_dst);
+	return (dst);
 }

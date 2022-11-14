@@ -6,7 +6,7 @@
 /*   By: lpupier <lpupier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 13:46:49 by lpupier           #+#    #+#             */
-/*   Updated: 2022/11/11 16:07:23 by lpupier          ###   ########.fr       */
+/*   Updated: 2022/11/14 08:10:47 by lpupier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	*ft_calloc(size_t count, size_t size)
 	if (!mem)
 		return (NULL);
 	idx = 0;
-	while (idx < count * size)
+	while (idx < (count * size))
 	{
 		mem[idx] = 0;
 		idx++;

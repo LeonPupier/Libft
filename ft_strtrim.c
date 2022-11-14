@@ -6,7 +6,7 @@
 /*   By: lpupier <lpupier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 09:04:07 by lpupier           #+#    #+#             */
-/*   Updated: 2022/11/11 16:53:58 by lpupier          ###   ########.fr       */
+/*   Updated: 2022/11/14 08:33:30 by lpupier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,10 @@ char	*ft_strtrim(char const *s1, char const *set)
 	size_t	start_new_s1;
 	char	*new_s1;
 
-	if (s1 == NULL)
-		return (NULL);
 	if (set == NULL)
 		return ((char *)s1);
+	else if (s1 == NULL)
+		return (NULL);
 	len_new_s1 = ft_strlen(s1);
 	idx = 0;
 	while (s1[idx] && ft_check_c_in_s((char *)set, s1[idx]))
