@@ -1,36 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_lstmap_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lpupier <lpupier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/09 09:06:17 by lpupier           #+#    #+#             */
-/*   Updated: 2022/11/15 16:36:41 by lpupier          ###   ########.fr       */
+/*   Created: 2022/11/15 15:19:50 by lpupier           #+#    #+#             */
+/*   Updated: 2022/11/15 16:46:26 by lpupier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_memcmp(const void *s1, const void *s2, size_t n)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	size_t			idx;
-	unsigned char	*new_s1;
-	unsigned char	*new_s2;
+	t_list	*new_lst;
+	t_list	*new_elt;
 
-	idx = 0;
-	new_s1 = (unsigned char *)s1;
-	new_s2 = (unsigned char *)s2;
-	while (idx < n)
+	new_lst = NULL;
+	if (lst && f && del)
 	{
-		if (new_s1[idx] == new_s2[idx])
-			idx++;
-		else
+		while (lst)
 		{
-			if (idx < n)
-				return (new_s1[idx] - new_s2[idx]);
-			return (0);
+			new_elt = ft_lstnew(f(lst -> content));
+			if (!new_elt)
+			{
+				ft_lstclear(&new_lst, del);
+				return (NULL);
+			}	
+			ft_lstadd_back(&new_lst, new_elt);
+			lst = lst -> next;
 		}
+		return (new_lst);
 	}
-	return (0);
+	return (NULL);
 }

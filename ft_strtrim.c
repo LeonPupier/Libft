@@ -6,7 +6,7 @@
 /*   By: lpupier <lpupier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 09:04:07 by lpupier           #+#    #+#             */
-/*   Updated: 2022/11/14 12:15:46 by lpupier          ###   ########.fr       */
+/*   Updated: 2022/11/15 10:59:19 by lpupier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ char	*ft_len_is_zero(void)
 	return (str);
 }
 
-char	*ft(char const *s1, char const *set, size_t len_s1, size_t start_s1)
+char	*loop(char const *s1, char const *set, size_t len_s1, size_t start_s1)
 {
 	char	*new_s1;
 	size_t	idx;
@@ -75,6 +75,6 @@ char	*ft_strtrim(char const *s1, char const *set)
 	len_s1 = ft_strlen(s1);
 	idx = 0;
 	start_new_s1 = 0;
-	new_s1 = ft(s1, set, len_s1, start_new_s1);
+	new_s1 = loop(s1, set, len_s1, start_new_s1);
 	return (new_s1);
 }
