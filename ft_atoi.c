@@ -6,23 +6,40 @@
 /*   By: lpupier <lpupier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 12:19:49 by lpupier           #+#    #+#             */
-/*   Updated: 2022/11/13 16:39:47 by lpupier          ###   ########.fr       */
+/*   Updated: 2022/11/15 18:03:35 by lpupier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <limits.h>
+
+int	ft_check_overflow(int sign)
+{
+	if (sign == -1)
+		return (0);
+	return (-1);
+}
+
+long long int	ft_conv(long long int res)
+{
+	if (res > INT_MAX)
+		return (res - LLONG_MAX - 1);
+	else if (res < INT_MIN)
+		return (res - LLONG_MIN);
+	else
+		return (res);
+}
 
 int	ft_atoi(const char *str)
 {
-	int	result;
-	int	idx;
-	int	sign;
+	long long int	result;
+	int				idx;
+	int				sign;
 
 	result = 0;
 	idx = 0;
 	sign = 1;
-	while (str[idx] == ' ' || str[idx] == '\f' || str[idx] == '\n'
-		|| str[idx] == '\r' || str[idx] == '\t' || str[idx] == '\v')
+	while (str[idx] == ' ' || (str[idx] >= 9 && str[idx] <= 13))
 		idx++;
 	if (str[idx] == '+' || str[idx] == '-')
 	{	
@@ -32,9 +49,10 @@ int	ft_atoi(const char *str)
 	}
 	while (str[idx] && str[idx] >= '0' && str[idx] <= '9')
 	{
-		result *= 10;
-		result += str[idx] - 48;
+		if (result != ((result * 10 + (str[idx] - 48)) / 10))
+			return (ft_check_overflow(sign));
+		result = result * 10 + str[idx] - 48;
 		idx++;
 	}
-	return (result * sign);
+	return ((int)ft_conv(result * sign));
 }
