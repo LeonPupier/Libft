@@ -6,14 +6,13 @@
 /*   By: lpupier <lpupier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 13:58:31 by lpupier           #+#    #+#             */
-/*   Updated: 2022/11/15 16:47:02 by lpupier          ###   ########.fr       */
+/*   Updated: 2022/11/16 16:12:30 by lpupier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include <string.h>
 # include <stdlib.h>
 # include <unistd.h>
 

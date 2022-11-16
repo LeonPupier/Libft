@@ -6,7 +6,7 @@
 /*   By: lpupier <lpupier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 17:29:34 by lpupier           #+#    #+#             */
-/*   Updated: 2022/11/13 14:24:07 by lpupier          ###   ########.fr       */
+/*   Updated: 2022/11/16 16:09:35 by lpupier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,11 @@ char	*ft_strchr(const char *s, int c)
 	idx = 0;
 	len_s = ft_strlen(s) + 1;
 	if (c == '\0')
-		return ((char *)&s[ft_strlen(s)]);
+		return ((char *) s + ft_strlen(s));
 	while (idx <= len_s && s[idx])
 	{
 		if (s[idx] == letter)
-			return ((char *)&s[idx]);
+			return ((char *) s + idx);
 		idx++;
 	}
 	return (NULL);

@@ -6,13 +6,13 @@
 /*   By: lpupier <lpupier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 10:51:30 by lpupier           #+#    #+#             */
-/*   Updated: 2022/11/11 10:10:51 by lpupier          ###   ########.fr       */
+/*   Updated: 2022/11/16 16:06:13 by lpupier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_count_separator(char const *s, char c)
+static size_t	ft_count_separator(char const *s, char c)
 {
 	size_t	idx;
 	size_t	count;
@@ -34,7 +34,18 @@ size_t	ft_count_separator(char const *s, char c)
 	return (count);
 }
 
-char	**ft_assign_value(char **tab, char const *s, char c)
+static void	*ft_free_tab(char **tab)
+{
+	while (*tab != NULL)
+	{
+		free(*tab);
+		tab++;
+	}
+	free(tab);
+	return (NULL);
+}
+
+static char	**ft_assign_value(char **tab, char const *s, char c)
 {
 	size_t	idx;
 	size_t	idx_start;
@@ -51,6 +62,8 @@ char	**ft_assign_value(char **tab, char const *s, char c)
 			while (s[idx] && s[idx] != c)
 				idx++;
 			tab[idx_tab] = ft_substr(s, idx_start, idx - idx_start);
+			if (!tab[idx_tab])
+				return (ft_free_tab(tab));
 			idx_tab++;
 		}
 		else

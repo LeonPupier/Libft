@@ -6,13 +6,13 @@
 /*   By: lpupier <lpupier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 09:04:07 by lpupier           #+#    #+#             */
-/*   Updated: 2022/11/15 10:59:19 by lpupier          ###   ########.fr       */
+/*   Updated: 2022/11/16 16:15:37 by lpupier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_check_c_in_s(char *set, char c)
+static int	ft_check_c_in_s(char *set, char c)
 {
 	int	idx;
 
@@ -26,16 +26,18 @@ int	ft_check_c_in_s(char *set, char c)
 	return (0);
 }
 
-char	*ft_len_is_zero(void)
+static char	*ft_len_is_zero(void)
 {
 	char	*str;
 
 	str = malloc(sizeof(char));
+	if (str == NULL)
+		return (NULL);
 	str[0] = '\0';
 	return (str);
 }
 
-char	*loop(char const *s1, char const *set, size_t len_s1, size_t start_s1)
+static char	*loop(char const *s1, char const *set, size_t len_s1, size_t start)
 {
 	char	*new_s1;
 	size_t	idx;
@@ -48,7 +50,7 @@ char	*loop(char const *s1, char const *set, size_t len_s1, size_t start_s1)
 	}
 	if (len_s1 > 0)
 	{
-		start_s1 = idx;
+		start = idx;
 		idx = ft_strlen(s1) - 1;
 		while (s1[idx] && ft_check_c_in_s((char *)set, s1[idx]))
 		{
@@ -59,7 +61,7 @@ char	*loop(char const *s1, char const *set, size_t len_s1, size_t start_s1)
 	if (len_s1 == 0)
 		new_s1 = ft_len_is_zero();
 	else
-		new_s1 = ft_substr(s1, start_s1, len_s1);
+		new_s1 = ft_substr(s1, start, len_s1);
 	return (new_s1);
 }
 

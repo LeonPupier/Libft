@@ -6,7 +6,7 @@
 /*   By: lpupier <lpupier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 10:43:36 by lpupier           #+#    #+#             */
-/*   Updated: 2022/11/14 10:09:06 by lpupier          ###   ########.fr       */
+/*   Updated: 2022/11/16 16:10:21 by lpupier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	int		size;
 	char	*new_s;
 
-	if (!s)
+	if (!s || !f)
 		return (NULL);
 	idx = 0;
 	size = ft_strlen(s);

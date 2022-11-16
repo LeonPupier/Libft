@@ -6,7 +6,7 @@
 /*   By: lpupier <lpupier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 10:20:44 by lpupier           #+#    #+#             */
-/*   Updated: 2022/11/14 16:37:46 by lpupier          ###   ########.fr       */
+/*   Updated: 2022/11/16 16:10:41 by lpupier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 					&& needle[idx_n]) && (idx + idx_n < len))
 				idx_n++;
 			if (!needle[idx_n])
-				return ((char *)&haystack[idx]);
+				return ((char *) haystack + idx);
 		}
 		idx++;
 	}

@@ -6,15 +6,13 @@
 /*   By: lpupier <lpupier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 09:44:05 by lpupier           #+#    #+#             */
-/*   Updated: 2022/11/14 11:06:25 by lpupier          ###   ########.fr       */
+/*   Updated: 2022/11/16 16:14:17 by lpupier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-#include <stdio.h>
-
-size_t	ft_count_itoa(int n)
+static size_t	ft_count_itoa(int n)
 {
 	size_t	count;
 	size_t	sign;
@@ -37,7 +35,7 @@ size_t	ft_count_itoa(int n)
 		return (count + 1);
 }
 
-char	*ft_convert_itoa(char *str, int n, size_t count)
+static char	*ft_convert_itoa(char *str, int n, size_t count)
 {
 	size_t	idx;
 
@@ -56,7 +54,7 @@ char	*ft_convert_itoa(char *str, int n, size_t count)
 	return (str);
 }
 
-char	*ft_n_is_zero(void)
+static char	*ft_n_is_zero(void)
 {
 	char	*str;
 

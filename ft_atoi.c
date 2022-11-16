@@ -6,21 +6,21 @@
 /*   By: lpupier <lpupier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 12:19:49 by lpupier           #+#    #+#             */
-/*   Updated: 2022/11/15 18:03:35 by lpupier          ###   ########.fr       */
+/*   Updated: 2022/11/16 16:14:40 by lpupier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <limits.h>
 
-int	ft_check_overflow(int sign)
+static int	ft_check_overflow(int sign)
 {
 	if (sign == -1)
 		return (0);
 	return (-1);
 }
 
-long long int	ft_conv(long long int res)
+static long long int	ft_conv(long long int res)
 {
 	if (res > INT_MAX)
 		return (res - LLONG_MAX - 1);
