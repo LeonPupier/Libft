@@ -6,7 +6,7 @@
 /*   By: lpupier <lpupier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 15:11:54 by lpupier           #+#    #+#             */
-/*   Updated: 2022/11/14 08:20:00 by lpupier          ###   ########.fr       */
+/*   Updated: 2022/11/17 12:33:14 by lpupier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,16 +20,11 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 
 	new_dst = (unsigned char *)dst;
 	new_src = (unsigned char *)src;
-	if (src >= dst && dst && src)
+	if (src >= dst)
 	{
-		idx = 0;
-		while (idx < len)
-		{
-			new_dst[idx] = new_src[idx];
-			idx++;
-		}
+		ft_memcpy(dst, src, len);
 	}
-	else if (dst && src)
+	else
 	{
 		idx = len;
 		while (idx > 0)

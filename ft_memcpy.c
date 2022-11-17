@@ -6,7 +6,7 @@
 /*   By: lpupier <lpupier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 18:27:09 by lpupier           #+#    #+#             */
-/*   Updated: 2022/11/13 14:17:09 by lpupier          ###   ########.fr       */
+/*   Updated: 2022/11/17 12:30:56 by lpupier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	unsigned char	*new_dst;
 
 	idx = 0;
+	if (dst == NULL && src == NULL)
+		return (NULL);
 	new_dst = (unsigned char *)dst;
 	new_src = (unsigned char *)src;
-	if (!dst)
-		return (NULL);
 	while (idx < n)
 	{
 		new_dst[idx] = new_src[idx];

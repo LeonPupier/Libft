@@ -6,7 +6,7 @@
 /*   By: lpupier <lpupier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 16:16:02 by lpupier           #+#    #+#             */
-/*   Updated: 2022/11/14 08:13:35 by lpupier          ###   ########.fr       */
+/*   Updated: 2022/11/17 12:14:14 by lpupier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,9 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 
 	i = 0;
 	j = 0;
-	if (!dst)
-		return (0);
-	len_dst = ft_strlen(dst);
 	if (dstsize == 0)
 		return (ft_strlen((char *)src));
+	len_dst = ft_strlen(dst);
 	while (dst[i] != '\0' && i < dstsize)
 		i++;
 	while (src[j] != '\0' && i < dstsize - 1)
