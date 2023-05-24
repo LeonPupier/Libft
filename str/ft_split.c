@@ -6,7 +6,7 @@
 /*   By: lpupier <lpupier@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 10:51:30 by lpupier           #+#    #+#             */
-/*   Updated: 2023/05/24 12:18:26 by lpupier          ###   ########.fr       */
+/*   Updated: 2023/05/24 13:44:26 by lpupier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ static size_t	ft_count_separator(char const *s, char c)
 	return (count);
 }
 
-static void	*ft_free_tab(char **tab)
+static void	*ft_free_tab_split(char **tab)
 {
 	while (*tab != NULL)
 	{
@@ -63,7 +63,7 @@ static char	**ft_assign_value(char **tab, char const *s, char c)
 				idx++;
 			tab[idx_tab] = ft_substr(s, idx_start, idx - idx_start);
 			if (!tab[idx_tab])
-				return (ft_free_tab(tab));
+				return (ft_free_tab_split(tab));
 			idx_tab++;
 		}
 		else

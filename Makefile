@@ -6,7 +6,7 @@
 #    By: lpupier <lpupier@student.42lyon.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/24 11:24:38 by lpupier           #+#    #+#              #
-#    Updated: 2023/05/24 13:32:50 by lpupier          ###   ########.fr        #
+#    Updated: 2023/05/24 13:45:09 by lpupier          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -60,7 +60,8 @@ SRC_LST		=	${DIR_LST}ft_lstadd_back.c	\
 				${DIR_LST}ft_lstmap.c		\
 				${DIR_LST}ft_lstnew.c		\
 				${DIR_LST}ft_lstsize.c		\
-				${DIR_LST}ft_len_tab.c
+				${DIR_LST}ft_len_tab.c		\
+				${DIR_LST}ft_free_tab.c
 
 # Memory files
 SRC_MEM		=	${DIR_MEM}ft_bzero.c	\
