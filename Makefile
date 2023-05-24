@@ -6,7 +6,7 @@
 #    By: lpupier <lpupier@student.42lyon.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/24 11:24:38 by lpupier           #+#    #+#              #
-#    Updated: 2023/05/24 13:45:09 by lpupier          ###   ########.fr        #
+#    Updated: 2023/05/24 13:53:01 by lpupier          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -85,6 +85,7 @@ SRC_STR		=	${DIR_STR}ft_atoi.c		\
 				${DIR_STR}ft_strlen.c	\
 				${DIR_STR}ft_strmapi.c	\
 				${DIR_STR}ft_strncmp.c	\
+				${DIR_STR}ft_strcmp.c	\
 				${DIR_STR}ft_strrchr.c	\
 				${DIR_STR}ft_strtrim.c	\
 				${DIR_STR}ft_substr.c
