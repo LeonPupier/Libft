@@ -6,7 +6,7 @@
 /*   By: lpupier <lpupier@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 13:58:31 by lpupier           #+#    #+#             */
-/*   Updated: 2023/05/24 13:43:26 by lpupier          ###   ########.fr       */
+/*   Updated: 2023/05/29 11:49:24 by lpupier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,12 @@ typedef struct s_list
 	void			*content;
 	struct s_list	*next;
 }	t_list;
+
+typedef struct s_list_char
+{
+	char				*content;
+	struct s_list_char	*next;
+}	t_list_char;
 
 // Char
 int			ft_isalpha(int c);
